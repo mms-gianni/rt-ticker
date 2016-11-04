@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+
+Route::get('/initial/{channel}', 'MessageController@showAllByChannel');
+
+
+Route::post('/message/store/{channel}', 'MessageController@store');
+Route::post('/message/destroy/{channel}/{muid}', 'MessageController@destroy');

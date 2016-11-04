@@ -40,6 +40,14 @@ return [
             ],
         ],
 
+        'fanout' => [
+            'driver' => 'fanout',
+            'realm_id' => env('FANOUT_REALM_ID'),
+            'realm_key' => env('FANOUT_REALM_KEY'),
+            'ssl' => true,
+            'publish_async' => false
+        ],
+
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',
